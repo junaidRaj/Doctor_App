@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "398208716366",
+    "project_id": "doctor-project-dba91",
+    "storage_bucket": "doctor-project-dba91.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398208716366:android:c2ff294ccd9668a5a7fd1f",
+        "android_client_info": {
+          "package_name": "com.project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398208716366-drjib607siim9ut29b6tlnb8abrsiubm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADNAPXoUy5w9iR8mVsOfaMB9U3z68kAC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "398208716366-drjib607siim9ut29b6tlnb8abrsiubm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
