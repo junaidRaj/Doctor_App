@@ -61,11 +61,11 @@ function TodoApp({navigation, route}) {
   return (
     <>
       <View style={[Styles.bgThemeLight, Styles.h100]}>
-        <View style={[Styles.bgPrimary, Styles.p1]}>
+        <View style={[Styles.bgPrimary, Styles.p2]}>
           <Text style={style.font}>Add Patient</Text>
         </View>
 
-        <View style={[Styles.flexCenter, Styles.py1, Styles.mt4]}>
+        <View style={[Styles.flexCenter, Styles.py1, Styles.mt2]}>
           <View style={[style.container, Styles.w100]}>
             <TextInput
               style={Styles.input}

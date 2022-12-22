@@ -8,12 +8,25 @@ import {
 import React, {useEffect, useState} from 'react';
 import Styles from './Styles';
 import database from '@react-native-firebase/database';
+import SMinput from '../Components/SMinput';
 
 export default function PatientsDetail({navigation, route}) {
   const [refresh, setRefresh] = useState(false);
   let [userId, setUserId] = useState(route.params);
+  const [filter, setFilter] = useState('');
   let [list, setList] = useState([]);
   let [text, setText] = useState('');
+  const search = e => {
+    setFilter(e);
+  };
+  let dataSearch = list.filter(item => {
+    return Object.keys(item).some(key =>
+      item[key]
+        .toString()
+        .toLowerCase()
+        .includes(filter.toString().toLowerCase()),
+    );
+  });
 
   useEffect(() => {
     setRefresh(true);
@@ -39,10 +52,21 @@ export default function PatientsDetail({navigation, route}) {
   return (
     <View>
       <View style={{width: '100%', height: '100%'}}>
-        <View style={[Styles.bgPrimary, Styles.p2]}>
-          <Text style={[Styles.fs3, Styles.textCenter, Styles.textWhite]}>
+        <View style={[Styles.bgPrimary, Styles.p3, Styles.mb1]}>
+          <Text
+            style={[
+              Styles.fs2,
+              Styles.textCenter,
+              Styles.textWhite,
+              Styles.mb2,
+            ]}>
             Patients Detail
           </Text>
+          <SMinput
+            onChangeText={search.bind(this)}
+            value={filter}
+            lable="Search Patients"
+          />
         </View>
 
         {text ? (
@@ -59,7 +83,7 @@ export default function PatientsDetail({navigation, route}) {
             refreshControl={
               <RefreshControl onRefresh={refreshings} refreshing={refresh} />
             }>
-            {list.map((x, i) => (
+            {dataSearch.map((x, i) => (
               <TouchableOpacity
                 onPress={() => {
                   x.doctorId = userId;

@@ -69,7 +69,7 @@ function Patient({navigation, route}) {
   return (
     <>
       <View style={[Styles.bgThemeLight, Styles.h100]}>
-        <View style={[Styles.bgPrimary, Styles.p1]}>
+        <View style={[Styles.bgPrimary, Styles.p2]}>
           <Text style={style.font}>Edit Patient</Text>
         </View>
 
